@@ -1,0 +1,11 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "MyFirstProject in node",
+  "main": "index.js",
+  "author": "itinhgv",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
