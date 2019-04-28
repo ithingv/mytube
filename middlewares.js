@@ -3,10 +3,11 @@ import routes from "./routes";
 
 const multerVideo = multer({ dest: "uploads/videos/" });
 // file을 Upload해서 middleware에서 받아 URL을 복사해서 DataBase에 저장하는 것
+const multerAvatar = multer({ dest: "uploads/avatars/" });
 export const localMiddleWare = (req, res, next) => {
-  res.locals.siteName = "ふにふにTube";
+  res.locals.siteName = "MyTube";
   res.locals.routes = routes;
-  res.locals.user = req.user || null;
+  res.locals.loggedUser = req.user || null;
   // user가 존재하거나 아니면 존재하지 않다면 비어있는 object를 주고록
   // passport가 사용자를 로그인 시킬 때, passport는 쿠키나 serialize, deserialize 등의 기능을 다 지원해줌은 물론이고,
   // user가 담긴 object를 요청(request)에도 올려줄 것{
@@ -29,3 +30,4 @@ export const onlyPrivate = (req, res, next) => {
   }
 };
 export const uploadVideo = multerVideo.single("videoFile");
+export const uploadAvatar = multerAvatar.single("avatar");

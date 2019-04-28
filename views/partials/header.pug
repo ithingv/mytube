@@ -5,18 +5,18 @@ header.header
                 i.fab.fa-youtube
         .header__column
             form(action=routes.search, method="get")
-                input(type="text", placeholder="検索してください", name="term")
+                input(type="text", placeholder="Search bar", name="term")
         .header__column
             ul
-                if !user
+                if !loggedUser
                     li
-                        a(href=routes.join) Join
+                        a(href=routes.join) 회원가입 
                     li
-                        a(href=routes.login) Log In
+                        a(href=routes.login) 로그인
                 else 
                     li
-                        a(href=`/videos${routes.upload}`) アップロード
+                        a(href=`/videos${routes.upload}`) 업로드
                     li
-                        a(href=routes.userDetail(user.id)) プロフィール
+                        a(href=routes.me) 회원정보
                     li
-                        a(href=routes.logout) ログアウト
+                        a(href=routes.logout) 로그아웃

@@ -40,7 +40,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 // passport는 초기화되고 다음엔 passport가 제 스스로 쿠키를 들여다봐서
-// 그 쿠키 정보에 해당하는 사용자를 찾아줄 것 
+// 그 쿠키 정보에 해당하는 사용자를 찾아줄 것
 // 그리고 passport는 자기가 찾은 그 사용자를 요청(request)의 object, 즉 req.user로 만들어준다.
 app.use(localMiddleWare);
 
